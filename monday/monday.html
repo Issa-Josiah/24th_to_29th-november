@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DATABASES</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href='monday.css'">
+    </head>
+    <body>
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+  <div class="bg-dark p-4">
+    <h5 class="text-body-emphasis h4">Monday</h5>
+    <span class="text-body-secondary"></span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+        <h1>Databases</h1>
+        <h2>USING MARIA DB</h2>
+        <h3>Creating a database</h3>
+        <p>In maria db, we can first identify the present databases by the command</p>
+        <code>SHOW DATABASE;</code>
+        <p>After seeing the database we are going to create a database using the command</p>
+        <code>CREATE DTATABASE SCHOOL;</code>
+        <p>CREATE is the syntax, DATABASE is the keyword and School is the name of the school</p>
+
+        <h3>Using database</h3>
+        <p>After creating the database we prompt it to use it</p>
+        <code>USE SCHOOL;</code>
+        <img src="img.png" alt="The structure of what is to be entailed">
+        <p>The school could be broken down into small pieces. This can be seen in erb diagrams</p>
+        <p>The erb diagrams have the table name and the columns themselves.</p>
+        <p>so create the table show the table and describe the course</p>
+        <div>
+            <img src="img_1.png" alt="the table created">
+            <code>
+                <pre>
+                      CREATE TABLE COURSE(
+            -> id int PRIMARY KEY AUTO_INCREMENT,
+            -> name varchar(150)
+            -> ,
+            -> description varchar(255),
+            ->  number_of_years int,
+            -> level varchar(200)
+            -> );
+        Query OK, 0 rows affected (0.375 sec)
+
+        MariaDB [school]> SHOW TABLES
+            -> ;
+        1 row in set (0.001 sec)
+
+        MariaDB [school]> DESCRIBE course
+            -> ;
+        5 rows in set (0.084 sec)
+                </pre>
+            </code>
+        </div>
+
+        <h3>Creating data</h3>
+        <p>TO CHANGE A VALUE YOU DO THIS CODE</p>
+        <code> ALTER TABLE School CHANGE descritpion description VARCHAR(255);</code>
+
+        <p>we put data  in the school table. We use the code</p>
+        <code>INSERT INTO school VALUES;(</code>
+
+        <p>To see the values in school insert the code below </p>
+        <code>SELECT * FROM school;</code>
+
+        <p>To see a certain category input the code below</p>
+        <code>SELECT * FROM school WHERE CATEGORY = "age"</code>
+
+        <p>To delete a certain data input the code below</p>
+        <code>DELETE FROM school WHERE name = "input the name";</code>
+
+        <p>Dealing with update. maybe you made an error we put the code below</p>
+        <code>UPDATE school SET level = "class 5" where &lt;id = 5&gt; or &lt; number_of_years = 10&gt; or
+            &lt;value that is similar an dunique to that column&gt;</code>
+        <img src="img_2.png" alt="the whole thing including inserting and deleting in one photo">
+        <h6>EVERYTHING THAT WE HAVE BUILT IS PURELY CRUD (CREATE, READ UPDATE DELETE). THIS IS THE MAIN FUNDAMENTALS.</h6></p>
+
+        <h3>GOING AND MANIPULATING DATA IN PYCHRM OR VS CODE IDE</h3>
+        <p>create a project and app then create the template, register the site in admin and finaly
+        create a super user for access. dont forget to migrate .</p>
+        <p>To add something based on the update time use class meta</p>
+        <p>We can go further and implement the updates in the views</p>
+
+        <p>look at the picture below</p>
+        <img src="img_3.png" alt="the picture">
+
+        <p>in the models do as stated and in the views under def fruits include a context with the specification fruits </p>
+
+        <p>Go to the index .html and do the adjastment seen below</p>
+        <img src="img_4.png" alt="the picture">
+    <h3>Forms</h3>
+    <p>finaly we are going to end it with the forms. </p>
+    <p>In te forms we have to create the form.html file. the forms are for adding the data</p>
+    <p>Next in the views under forms updte it to be able to take in forms and post it in the data</p>
+    <p>finaly update the urls to be able to transmit it to the web .</p>
+    <p>test and you will see the progress</p>
+    <footer class="bg-warning py-4 text-center">
+        <a class="text-decoration-none fs-2 text-center text-success bg-danger px-4 py-2" href="https://www.mediafire.com/file/o4sjl3q7gbtvdz9/monday_24th.mp4/file">monday video</a>
+    </footer>
+
+    </body>
+</html>
