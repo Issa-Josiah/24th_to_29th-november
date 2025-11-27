@@ -1,0 +1,10 @@
+    <a href="{% url 'create' %}"  class="badge bg-warning text-decoration-none py-2 px-3 text-dark">Add Fruit </a>
+
+    <hr>
+     {% for fruit in fruits %}
+        <div class="display-5">{{fruit.name}}</div>
+        <p class="lead">{{fruit.description}}</p>
+        <div class="badge bg-dark  py-2 px-3">ksh. {{fruit.price}}</div>
+        <a href="{% url 'readOne' fruit.id %}"  class="badge bg-info text-decoration-none py-2 px-3 text-dark">view more > </a>
+    <hr>
+     {% endfor %}

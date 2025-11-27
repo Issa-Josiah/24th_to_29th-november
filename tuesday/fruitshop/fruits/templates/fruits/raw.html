@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+
+<div class="container my-5">
+    <hr>
+    <div class="display-4 fw-bold "> Welcome </div>
+<hr>
+
+<div>
+
+
+    <a href="{% url 'create'  %}" class="badge bg-danger py-3 px-1 text-decoration-none">ADD FRUITS</a>
+ {% for fruits in fruits %}
+        <div class="display-5 py-4">{{fruits.name}}</div>
+        <p class="lead fs-3 py-2">{{fruits.description}}</p>
+        <p class="lead fs-2">{{fruits.price}}</p>
+
+    <a href="{% url 'one' fruits.id %}" class="badge bg-warning py-3 px-1 text-decoration-none"> see more </a><br>
+     <a href="{% url 'update' fruits.id %}" class="badge bg-success py-3 px-1 text-decoration-none"> update fruit </a>
+    <a href="{% url 'delete' fruits.id %}" class="badge bg-danger py-3 px-1 text-decoration-none"> delete fruit </a>
+{% endfor %}
+    <br>
+    <hr>
+
+</div>
+    </div>
+
+{% endblock %}
+
