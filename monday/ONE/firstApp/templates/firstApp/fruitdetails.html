@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+
+        {% block content %}
+    <div class="container my-5">
+        <div class="container my-3">
+            <div class="dispay-6 my-6 py-5 fs-1 fw-2">WELCOME TO MY PERSONAL FRUITSTALL</div>
+            <hr>
+<!--            <div class="fs-6">{{ fruits }}</div>-->
+            {% for fruit in fruits %}
+            <div class="display-4"> {{fruit.name}} </div>
+            <p class="lead"> {{fruit.description}}</p>
+            <span class="badge bg-info"> ksh {{fruit.price}}</span>
+            <a href="(% url 'readOne' fruits.id "> view more</a>
+            {% endfor %}
+            <hr>
