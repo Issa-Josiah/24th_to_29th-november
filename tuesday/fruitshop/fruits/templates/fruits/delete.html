@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+
+<div class="container my-5">
+    <hr>
+    <div class="display-4 fw-bold "> Welcome </div>
+<hr>
+
+<div>
+
+
+    <a href="{% url 'read'  %}" class="badge bg-danger py-3 px-1 text-decoration-none">back to home</a>
+      <a href="{% url 'delete' fruit.id  %}" class="badge bg-danger py-3 px-1 text-decoration-none">delete</a>
+
+
+</div>
+    </div>
+
+{% endblock %}
